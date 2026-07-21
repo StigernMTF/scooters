@@ -1,8 +1,10 @@
+from typing import TYPE_CHECKING
+
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, ForeignKey
 
-from app.models.User import User
-from app.models.base_models import Base
+from app.models.user import User
+from app.models.base import Base
 
 
 class Payment(Base):
@@ -14,7 +16,7 @@ class Payment(Base):
     card_CVC: Mapped[int] = mapped_column()
 
     user_id_to_which_belongs: Mapped[int] = mapped_column(ForeignKey("user_acc.id"))
-    user: Mapped[User] = relationship(back_populates="payment_card")
+    user: Mapped[User] = relationship(back_populates="payment_cards")
 
     def __repr__(self) -> str:
         return f"Payment(Id={self.id!r}, user_id_to_which_belongs={self.user_id_to_which_belongs!r})"

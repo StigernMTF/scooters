@@ -1,4 +1,4 @@
-from app.service import try_service as ts
+from app.service import user_service as ts
 from fastapi import APIRouter
 from app.schemas import first_pydantic_schema as fps
 

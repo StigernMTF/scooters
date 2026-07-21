@@ -1,1 +1,1 @@
-DATABASE_URL='postgresql+psycopg://dev-user:password@loacalhost:5432/dev_db' #example url. does not have anything in commin with real url
+DATABASE_URL='postgresql+psycopg_async://admn:312@localhost:5432/scooter_sharing'
