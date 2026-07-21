@@ -1,0 +1,1 @@
+DATABASE_URL='postgresql+psycopg://dev-user:password@loacalhost:5432/dev_db' #example url. does not have anything in commin with real url
