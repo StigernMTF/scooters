@@ -5,6 +5,7 @@ from app import config as env
 from app.models.base import Base
 from app.models.user import User
 from app.models.payment import Payment
+from app.models.tokens import Token
 
 engine = create_async_engine(env.DATABASE_URL, echo=True)
 AsyncSessionLocal = async_sessionmaker(bind=engine, expire_on_commit=False)

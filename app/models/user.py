@@ -3,6 +3,7 @@ from typing import List, Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from app.models.payment import Payment
+    from app.models.tokens import Token
 from app.models.base import Base
 
 
@@ -15,6 +16,8 @@ class User(Base):
     is_active: Mapped[bool] = mapped_column(nullable=True)
 
     payment_cards: Mapped[List["Payment"]] = relationship(back_populates="user")
+
+    ref_token: Mapped[List["Token"]] = relationship(back_populates="user")
 
     def __repr__(self) -> str:
         return f"User(id={self.id!r}, email={self.email!r}, is_active={self.is_active!r})"
