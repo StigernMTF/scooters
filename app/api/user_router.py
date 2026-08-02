@@ -1,4 +1,3 @@
-from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User

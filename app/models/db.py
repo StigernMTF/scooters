@@ -6,6 +6,9 @@ from app.models.base import Base
 from app.models.user import User
 from app.models.payment import Payment
 from app.models.tokens import Token
+from app.models.parking import Parking
+from app.models.rides import Rides
+from app.models.scooter import Scooter
 
 engine = create_async_engine(env.DATABASE_URL, echo=True)
 AsyncSessionLocal = async_sessionmaker(bind=engine, expire_on_commit=False)
