@@ -9,5 +9,8 @@ class Tokens(BaseModel):
 
 class Refresh_token(BaseModel):
     user_id: int
+    expires_at: datetime
     refresh_token_hashed: str
-    expires_in: datetime
+
+    class Config:
+        from_attributes = True

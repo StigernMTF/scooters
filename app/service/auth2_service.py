@@ -30,6 +30,7 @@ async def refresh_tokens(token: str, session: AsyncSession = Depends(get_session
 
     query = select(Token).where(Token.user_id == user.id)
     result = await session.execute(query)
+
     db_tokens = result.scalars().all()
 
     matched_token = None

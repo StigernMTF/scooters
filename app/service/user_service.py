@@ -61,7 +61,7 @@ async def add_payment_card(
 
 async def get_user_by_email(email: str, session: AsyncSession):
     query = (
-        select(User).where(User.email == email).options(selectinload(User.payment_cards))
+        select(User).where(User.email == email).options(selectinload(User.payment_cards), selectinload(User.ref_token))
     )
 
     result = await session.execute(query)
@@ -72,7 +72,7 @@ async def get_user_by_email(email: str, session: AsyncSession):
     return user
 
 async def get_my_profile(user_data: User, session: AsyncSession):
-    query = select(User).where(User.id == user_data.id).options(selectinload(User.payment_cards))
+    query = select(User).where(User.id == user_data.id).options(selectinload(User.payment_cards), selectinload(User.ref_token))
     result = await session.execute(query)
     user = result.scalar_one_or_none()
     if user is None:

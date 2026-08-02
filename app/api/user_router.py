@@ -39,6 +39,6 @@ async def get_profile_router(
 ):
     return await get_my_profile(current_user, session)
 
-@router.get('/{email}', response_model=UserResponse) # ----------------------------------------worker func only xd
+@router.get('/{email}', response_model=UserResponse) # ----------------------------------------only workers func xd
 async def get_user_by_email_router(email: str, session: AsyncSession = Depends(get_session)):
     return await get_user_by_email(email, session)
