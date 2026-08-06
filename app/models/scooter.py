@@ -2,10 +2,10 @@ from typing import Any, List
 
 from geoalchemy2 import Geometry, Geography
 import enum
-from sqlalchemy.orm import Mapped, mapped_column, relationships, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.rides import Rides
-from base import Base
+from app.models.base import Base
 
 class ScooterStatus(str, enum.Enum):
     AVAILABLE = 'AVAILABLE'

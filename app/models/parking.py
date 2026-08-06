@@ -3,7 +3,7 @@ from typing import Any
 from geoalchemy2 import Geometry
 from sqlalchemy.orm import Mapped, mapped_column
 
-from base import Base
+from app.models.base import Base
 
 class Parking(Base):
     __tablename__ = 'parking'

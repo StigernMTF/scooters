@@ -9,7 +9,7 @@ from app.schemas.user import UserCreate, UserResponse
 from app.models.db import get_session
 from app.schemas.jwt_token import Tokens
 
-router = APIRouter(prefix="/user", tags=["Users"])
+router = APIRouter()
 
 @router.post("/registration", response_model=Tokens)
 async def create_user_router(user_data: UserCreate, session: AsyncSession = Depends(get_session)):
